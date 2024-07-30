@@ -6,7 +6,6 @@ namespace ECS.Systems
 {
     sealed class MovementSystem : IEcsRunSystem
     {
-        private readonly EcsWorld _world = null;
         private readonly EcsFilter<ModelComponent, MovableComponent, DirectionComponent> _movableFilter = null;
 
         public void Run()
@@ -18,7 +17,7 @@ namespace ECS.Systems
                 ref var directionComponent = ref _movableFilter.Get3(i);
 
                 ref var direction = ref directionComponent.Direction;
-                ref var transform = ref modelComponent.ModelTransform;
+                ref var transform = ref modelComponent.modelTransform;
                 ref var characterController = ref movableComponent.Controller;
                 ref var speed = ref movableComponent.Speed;
 

@@ -1,6 +1,7 @@
+using ECS.Components;
 using Voody.UniLeo;
 
-namespace ECS.Components
+namespace ECS.Providers
 {
     public class ModelProvider : MonoProvider<ModelComponent>{}
 }

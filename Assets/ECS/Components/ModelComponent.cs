@@ -6,6 +6,6 @@ namespace ECS.Components
     [Serializable]
     public struct ModelComponent
     {
-        public Transform ModelTransform;
+        public Transform modelTransform;
     }
 }

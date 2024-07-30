@@ -44,7 +44,9 @@ namespace ECS
         private void AddSystems()
         {
             _systems.
+                Add(new PlayerMouseInputSystem()).
                 Add(new PlayerInputSystem()).
+                Add(new PlayerMouseLookSystem()).
                 Add(new MovementSystem());
         }
 
