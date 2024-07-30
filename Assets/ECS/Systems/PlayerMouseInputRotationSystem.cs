@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace ECS.Systems
 {
-    sealed class PlayerMouseInputSystem : IEcsRunSystem
+    sealed class PlayerMouseInputRotationSystem : IEcsRunSystem
     {
         private readonly EcsFilter<MouseLookDirectionComponent> _mouseLookDirectionFilter = null;
         

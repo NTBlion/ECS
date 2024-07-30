@@ -1,4 +1,5 @@
 using System;
+using ECS.Components;
 using ECS.Systems;
 using Leopotam.Ecs;
 using UnityEngine;
@@ -17,11 +18,11 @@ namespace ECS
             _systems = new EcsSystems(_world);
 
             _systems.ConvertScene();
-            
+
             AddInjections();
             AddOneFrames();
             AddSystems();
-            
+
             _systems.Init();
         }
 
@@ -44,10 +45,12 @@ namespace ECS
         private void AddSystems()
         {
             _systems.
-                Add(new PlayerMouseInputSystem()).
+                Add(new PlayerMouseInputRotationSystem()).
                 Add(new PlayerInputSystem()).
-                Add(new PlayerMouseLookSystem()).
-                Add(new MovementSystem());
+                Add(new PlayerRotationSystem()).
+                Add(new MovementSystem()).
+                Add(new ShootEventSendSystem()).
+                Add(new ShootSystem());
         }
 
         private void AddInjections()
@@ -56,6 +59,7 @@ namespace ECS
 
         private void AddOneFrames()
         {
+            _systems.OneFrame<ShootEventComponent>();
         }
     }
 }
