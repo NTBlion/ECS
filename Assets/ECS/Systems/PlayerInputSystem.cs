@@ -7,7 +7,7 @@ namespace ECS.Systems
 {
     sealed class PlayerInputSystem : IEcsRunSystem
     {
-        private EcsFilter<DirectionComponent> _directionFilter = null;
+        private EcsFilter<DirectionComponent, PlayerTag> _directionFilter = null;
 
         private float _moveX;
         private float _moveZ;

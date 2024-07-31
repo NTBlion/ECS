@@ -6,7 +6,7 @@ namespace ECS.Systems
 {
     sealed class PlayerRotationSystem : IEcsRunSystem
     {
-        private readonly EcsFilter<ModelComponent, MouseLookDirectionComponent> _mouseLookFilter = null;
+        private readonly EcsFilter<ModelComponent, MouseLookDirectionComponent, PlayerTag> _mouseLookFilter = null;
 
         private readonly Quaternion _startTransformRotation = Quaternion.identity;
 

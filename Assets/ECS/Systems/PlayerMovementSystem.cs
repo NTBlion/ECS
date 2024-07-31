@@ -4,9 +4,9 @@ using UnityEngine;
 
 namespace ECS.Systems
 {
-    sealed class MovementSystem : IEcsRunSystem
+    sealed class PlayerMovementSystem : IEcsRunSystem
     {
-        private readonly EcsFilter<ModelComponent, MovableComponent, DirectionComponent> _movableFilter = null;
+        private readonly EcsFilter<ModelComponent, PlayerMovableComponent, DirectionComponent, PlayerTag> _movableFilter = null;
 
         public void Run()
         {
@@ -18,8 +18,8 @@ namespace ECS.Systems
 
                 ref var direction = ref directionComponent.Direction;
                 ref var transform = ref modelComponent.modelTransform;
-                ref var characterController = ref movableComponent.Controller;
-                ref var speed = ref movableComponent.Speed;
+                ref var characterController = ref movableComponent.controller;
+                ref var speed = ref movableComponent.speed;
 
                 var rawDirection = transform.right * direction.x + transform.forward * direction.z;
                 characterController.Move(rawDirection * speed * Time.deltaTime);

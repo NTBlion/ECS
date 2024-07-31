@@ -6,7 +6,7 @@ namespace ECS.Systems
 {
     sealed class PlayerMouseInputRotationSystem : IEcsRunSystem
     {
-        private readonly EcsFilter<MouseLookDirectionComponent> _mouseLookDirectionFilter = null;
+        private readonly EcsFilter<MouseLookDirectionComponent, PlayerTag> _mouseLookDirectionFilter = null;
         
         private float _axisX;
         

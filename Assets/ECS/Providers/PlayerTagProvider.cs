@@ -3,5 +3,5 @@ using Voody.UniLeo;
 
 namespace ECS.Providers
 {
-    public class MovableProvider : MonoProvider<MovableComponent>{}
+    public class PlayerTagProvider : MonoProvider<PlayerTag>{}
 }

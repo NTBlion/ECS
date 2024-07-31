@@ -48,9 +48,9 @@ namespace ECS
                 Add(new PlayerMouseInputRotationSystem()).
                 Add(new PlayerInputSystem()).
                 Add(new PlayerRotationSystem()).
-                Add(new MovementSystem()).
-                Add(new ShootEventSendSystem()).
-                Add(new ShootSystem());
+                Add(new PlayerMovementSystem()).
+                Add(new ShootSystem()).
+                Add(new FireBallMovementSystem());
         }
 
         private void AddInjections()
@@ -59,7 +59,6 @@ namespace ECS
 
         private void AddOneFrames()
         {
-            _systems.OneFrame<ShootEventComponent>();
         }
     }
 }
