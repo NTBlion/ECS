@@ -50,7 +50,11 @@ namespace ECS
                 Add(new PlayerRotationSystem()).
                 Add(new PlayerMovementSystem()).
                 Add(new ShootSystem()).
-                Add(new FireBallMovementSystem());
+                Add(new FireBallMovementSystem()).
+                Add(new EnemySpawnSystem()).
+                Add(new EnemyFollowSystem()).
+                Add(new HealthSystem()).
+                Add(new EnemyAttackSystem());
         }
 
         private void AddInjections()

@@ -12,8 +12,8 @@ namespace ECS.Behaviors
         {
             if (other.collider.TryGetComponent(out EntityHandler handler))
             {
-               ref var hitComponent = ref _handler.Entity.Get<HitComponent>();
-               hitComponent.Entity = handler.Entity;
+              // ref var hitComponent = ref _handler.Entity.Get<HitComponent>();
+               //hitComponent.Entity = handler.Entity;
             }
         }
     }
